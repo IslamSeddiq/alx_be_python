@@ -1,8 +1,8 @@
 while True:
     # Prompt for a single task
-    task = input("Enter the task description: ")
-    priority = input("Set the task's priority (high/medium/low): ").lower()
-    time_bound = input("Is the task time-bound? (yes/no): ").lower()
+    task = input("Enter your task: ")
+    priority = input("Priority (high/medium/low): ").lower()
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
 
     # Match-case for priority
     match priority:
