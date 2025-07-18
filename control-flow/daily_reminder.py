@@ -1,29 +1,34 @@
 while True:
-    # Prompt for a single task
+    # Get task details from user
     task = input("Enter your task: ")
     priority = input("Priority (high/medium/low): ").lower()
     time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-    # Match-case for priority
+    # Use match-case to construct base message
     match priority:
         case "high":
-            reminder = f"Reminder: '{task}' is a high priority task."
+            if time_bound == "yes":
+                print(f"\nReminder: '{task}' is a high priority task that requires immediate attention today!\n")
+            else:
+                print(f"\nNote: '{task}' is a high priority task. Plan to complete it soon.\n")
+
         case "medium":
-            reminder = f"Reminder: '{task}' is a medium priority task."
+            if time_bound == "yes":
+                print(f"\nReminder: '{task}' is a medium priority task that should be done today.\n")
+            else:
+                print(f"\nNote: '{task}' is a medium priority task. Try to complete it this week.\n")
+
         case "low":
-            reminder = f"Reminder: '{task}' is a low priority task."
+            if time_bound == "yes":
+                print(f"\nReminder: '{task}' is a low priority task but still needs to be done today.\n")
+            else:
+                print(f"\nNote: '{task}' is a low priority task. Consider completing it when you have free time.\n")
+
         case _:
-            reminder = f"Reminder: '{task}' has an unknown priority."
+            print("\nInvalid priority entered. Please use high, medium, or low.\n")
 
-    # Time-bound logic
-    if time_bound == "yes":
-        reminder += " This task requires immediate attention today!"
-
-    # Display final reminder
-    print(reminder)
-
-    # Ask if the user wants to add another task
+    # Ask to continue
     again = input("Do you want to enter another task? (yes/no): ").lower()
     if again != "yes":
-        print("Goodbye! Stay productive.")
+        print("Goodbye! Stay organized.")
         break
