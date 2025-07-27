@@ -28,5 +28,5 @@ def main():
             print("Goodbye!")
             break
         else:
-            print("Invalid option. Invalid choice. Please try again.")
+            print("Please enter a valid number.")
 main()
