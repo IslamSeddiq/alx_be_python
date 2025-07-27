@@ -3,10 +3,10 @@ FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 # Conversion functions
-def convert_to_celsius(fahrenheit: float) -> float:
+def convert_to_celsius(fahrenheit: float):
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
-def convert_to_fahrenheit(celsius: float) -> float:
+def convert_to_fahrenheit(celsius: float):
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 # User interaction
