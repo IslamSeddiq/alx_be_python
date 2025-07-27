@@ -1,25 +1,32 @@
-shopping_list = []
-while True:
-    options = input("Choose an option(add an item, remove an item or view the list): ").strip().lower()
-    match options:
-        case "add an item":
-            item = input("Enter the item you want to add: ").strip().lower()
-            shopping_list.append(item)
-            print(f'"{item}" has been added to the list.')
-        case "remove an item":
-            item = input("Enter the item you want to remove: ").strip().lower()
-            if item in shopping_list:
-                shopping_list.remove(item)
-                print(f'"{item}" has been removed from the list.')
-            else:
-                print(f'"{item}" is not found in the shopping list.')
-            shopping_list.remove(item)
-        case "view the list":
-            print(shopping_list)
-        case _:
-            print("Invalid option. Please choose: add an item, remove an item, or view the list.")
+def display_menu():
+    print("Shopping List Manager")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View List")
+    print("4. Exit")
 
-    again = input("Do you want to do another action? (yes/no): ").strip().lower()
-    if again != "yes":
-        print("Goodbye!")
-        break
+def main():
+    shopping_list = []
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ").strip().lower()
+        match choice:
+            case "1":
+                item = input("Enter the item you want to add: ").strip().lower()
+                shopping_list.append(item)
+                print(f'"{item}" has been added to the list.')
+            case "2":
+                item = input("Enter the item you want to remove: ").strip().lower()
+                if item in shopping_list:
+                    shopping_list.remove(item)
+                    print(f'"{item}" has been removed from the list.')
+                else:
+                    print(f'"{item}" is not found in the shopping list.')
+                shopping_list.remove(item)
+            case "3":
+                print(shopping_list)
+            case "4":
+                print("Goodbye!")
+                break
+            case _:
+                print("Invalid option. Invalid choice. Please try again.")
