@@ -9,13 +9,13 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice: ").strip().lower()
+        choice = int(input("Enter your choice: "))
         match choice:
-            case "1":
+            case 1:
                 item = input("Enter the item you want to add: ").strip().lower()
                 shopping_list.append(item)
                 print(f'"{item}" has been added to the list.')
-            case "2":
+            case 2:
                 item = input("Enter the item you want to remove: ").strip().lower()
                 if item in shopping_list:
                     shopping_list.remove(item)
@@ -23,9 +23,9 @@ def main():
                 else:
                     print(f'"{item}" is not found in the shopping list.')
                 shopping_list.remove(item)
-            case "3":
+            case 3:
                 print(shopping_list)
-            case "4":
+            case 4:
                 print("Goodbye!")
                 break
             case _:
