@@ -5,11 +5,12 @@ def safe_divide(numerator, denominator):
         num = float(numerator)
         den = float(denominator)
         result = num / den
-        return f"Result: {result}"
-    except ValueError:
-        return "Error: Please enter numeric values."
+        return result
     except ZeroDivisionError:
-        return "Error: Cannot divide by zero."
+        return "Error: Cannot divide by zero"
+    except ValueError:
+        return "Error: Non-numeric input"
+
 
 # main.py
 
@@ -25,7 +26,11 @@ def main():
     denominator = sys.argv[2]
 
     result = safe_divide(numerator, denominator)
-    print(result)
+    
+    if isinstance(result, float):
+        print(f"Result: {result}")
+    else:
+        print(result)
 
 if __name__ == "__main__":
     main()
