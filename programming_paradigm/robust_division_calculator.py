@@ -9,7 +9,7 @@ def safe_divide(numerator, denominator):
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
     except ValueError:
-        return "Error: Non-numeric input."
+        return "Error: Please enter numeric values only."
 
 
 # main.py
@@ -34,3 +34,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
