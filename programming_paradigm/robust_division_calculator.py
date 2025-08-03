@@ -28,10 +28,11 @@ def main():
     result = safe_divide(numerator, denominator)
     
     if isinstance(result, float):
-        print(f"Result: {result}")
+        print(f"The result of the division is {result}")
     else:
         print(result)
 
 if __name__ == "__main__":
     main()
+
 
