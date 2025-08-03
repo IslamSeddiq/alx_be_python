@@ -3,9 +3,9 @@
 def safe_divide(numerator, denominator):
     try:
         num = float(numerator)
-        den = float(denominator)
-        result = num / den
-        return result
+        denom = float(denominator)
+        result = num / denom
+        return f"The result of the division is {result}"
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
     except ValueError:
@@ -34,5 +34,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
