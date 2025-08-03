@@ -7,9 +7,9 @@ def safe_divide(numerator, denominator):
         result = num / den
         return result
     except ZeroDivisionError:
-        print("Error: Cannot divide by zero")
+        return "Error: Cannot divide by zero."
     except ValueError:
-        print("Error: Non-numeric input")
+        return "Error: Non-numeric input."
 
 
 # main.py
@@ -34,4 +34,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
