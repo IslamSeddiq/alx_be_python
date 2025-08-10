@@ -12,7 +12,8 @@ class Book:
     
     def __repr__(self):
         return f"Book('{self.title}', '{self.author}', {self.year})"
-    from book_class import Book
+        
+from book_class import Book
 
 def main():
     # Creating an instance of Book
@@ -29,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
