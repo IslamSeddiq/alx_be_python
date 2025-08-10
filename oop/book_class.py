@@ -14,8 +14,8 @@ class Book:
         return f"Book('{self.title}', '{self.author}', {self.year})"
         
 my_book = Book("1984", "George Orwell", 1949)
-print(my_book.__str__())
-print(my_book.__repr__())
+print(my_book)
+print(repr(my_book)) 
         
 from book_class import Book
 
@@ -34,6 +34,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
