@@ -5,58 +5,51 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 
 
 # Derived class - EBook
 class EBook(Book):
-    def __init__(self, title, author, file_size):
-        super().__init__(title, author)  # Call the base class constructor
-        self.file_size = file_size  # in MB
+    def __init__(self, title, author, file_size_kb):
+        super().__init__(title, author)
+        self.file_size_kb = file_size_kb  # store in KB
 
     def __str__(self):
-        return f"{self.title} by {self.author} [EBook, {self.file_size}MB]"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size_kb}KB"
 
 
 # Derived class - PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
-        super().__init__(title, author)  # Call the base class constructor
+        super().__init__(title, author)
         self.page_count = page_count
 
     def __str__(self):
-        return f"{self.title} by {self.author} [Print, {self.page_count} pages]"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 # Composition - Library
 class Library:
     def __init__(self):
-        self.books = []  # stores Book, EBook, PrintBook objects
+        self.books = []
 
     def add_book(self, book):
-        if isinstance(book, Book):  # Ensure only Book or subclasses
+        if isinstance(book, Book):
             self.books.append(book)
         else:
             print("Only Book instances can be added.")
 
     def list_books(self):
-        if not self.books:
-            print("The library is empty.")
-        else:
-            for book in self.books:
-                print(book)
+        for book in self.books:
+            print(book)
 
 
 # Example usage
 if __name__ == "__main__":
-    # Create books
-    ebook1 = EBook("1984", "George Orwell", 5)
-    printbook1 = PrintBook("To Kill a Mockingbird", "Harper Lee", 324)
+    library = Library()
 
-    # Create library and add books
-    my_library = Library()
-    my_library.add_book(ebook1)
-    my_library.add_book(printbook1)
+    library.add_book(Book("Pride and Prejudice", "Jane Austen"))
+    library.add_book(EBook("Snow Crash", "Neal Stephenson", 500))
+    library.add_book(PrintBook("The Catcher in the Rye", "J.D. Salinger", 234))
 
-    # List books
-    my_library.list_books()
+    library.list_books()
