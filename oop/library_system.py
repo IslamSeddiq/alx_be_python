@@ -45,24 +45,18 @@ class Library:
         else:
             for book in self.books:
                 print(book)
-from library_system import Book, EBook, PrintBook, Library
 
-def main():
-    # Create a Library instance
-    my_library = Library()
 
-    # Create instances of each type of book
-    classic_book = Book("Pride and Prejudice", "Jane Austen")
-    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
-    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
-
-    # Add books to the library
-    my_library.add_book(classic_book)
-    my_library.add_book(digital_novel)
-    my_library.add_book(paper_novel)
-
-    # List all books in the library
-    my_library.list_books()
-
+# Example usage
 if __name__ == "__main__":
-    main()
+    # Create books
+    ebook1 = EBook("1984", "George Orwell", 5)
+    printbook1 = PrintBook("To Kill a Mockingbird", "Harper Lee", 324)
+
+    # Create library and add books
+    my_library = Library()
+    my_library.add_book(ebook1)
+    my_library.add_book(printbook1)
+
+    # List books
+    my_library.list_books()
