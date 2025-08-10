@@ -12,10 +12,6 @@ class Book:
     
     def __repr__(self):
         return f"Book('{self.title}', '{self.author}', {self.year})"
-    
-my_book = Book("1984", "George Orwell", 1949)
-print(my_book)         # calls __str__ automatically
-print(repr(my_book))   # calls __repr__ automatically
 
 from book_class import Book
 
@@ -34,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
