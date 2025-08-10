@@ -14,5 +14,7 @@ class Book:
         return f"Book('{self.title}', '{self.author}', {self.year})"
     
 my_book = Book("1984", "George Orwell", 1949)
-print(my_book)         # Automatically calls __str__
-print(repr(my_book))   # Automatically calls __repr__
+print(my_book)         # calls __str__ automatically
+print(repr(my_book))   # calls __repr__ automatically
+
+
